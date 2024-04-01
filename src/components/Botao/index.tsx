@@ -1,14 +1,17 @@
 import React from 'react';
-import { ReactElement } from "react";
 
-
-interface BotaoProps {
-    children: ReactElement
+class Botao extends React.Component<{
+  type?: "submit" | "button" | "reset";
+  children?: React.ReactNode;
+}> {
+  render() {
+    const { type = "button" } = this.props;
+    return (
+      <button type={type} >
+        {this.props.children}
+      </button>
+    )
+  }
 }
 
-const Botao = (props: BotaoProps) => {
-    return (<button className='botao'>
-        {props.children}
-    </button>)
-};
 export default Botao;
