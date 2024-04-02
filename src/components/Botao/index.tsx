@@ -1,17 +1,13 @@
-import React from 'react';
+import React from 'react'; 
 
-class Botao extends React.Component<{
-  type?: "submit" | "button" | "reset";
-  children?: React.ReactNode;
-}> {
+class Botao extends React.Component {
   render() {
-    const { type = "button" } = this.props;
-    return (
-      <button type={type} >
-        {this.props.children}
-      </button>
-    )
-  }
-}
-
-export default Botao;
+     return (
+       <button>
+           Botão
+         </button>
+        )
+     }
+    }
+    
+    export default Botao; 
