@@ -7,7 +7,6 @@ const Cadastro: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    // Aqui você pode implementar a lógica para enviar os dados para o servidor
     console.log('Dados enviados:', { nome, email, senha });
   };
 
