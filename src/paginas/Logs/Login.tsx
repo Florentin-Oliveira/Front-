@@ -1,16 +1,47 @@
-import React from 'react';
-import { Button, TextField, Link, Grid, Typography, Container, Box } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { Button, TextField, Link, Grid, Typography, Container, Box, Stack, Alert, AlertTitle } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 
 const LoginForm: React.FC = () => {
+  const [showAlert, setShowAlert] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowAlert(false), 7000); // Controla a duração do alerta
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" sx={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      {showAlert && (
+        <Box
+          sx={{
+            position: 'fixed',
+            top: 20,
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            zIndex: 1000,
+          }}
+        >
+          <Stack sx={{ width: '90%' }} spacing={2}>
+            <Alert severity="info">
+              <AlertTitle>Info</AlertTitle>
+              Insira suas credenciais para fazer login.
+            </Alert>
+          </Stack>
+        </Box>
+      )}
       <Box
         sx={{
-          marginTop: 8,
+          width: '100%',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          backgroundColor: 'white',
+          padding: 3,
+          borderRadius: 2,
+          boxShadow: 3,
+          zIndex: 1, 
         }}
       >
         <Typography component="h1" variant="h5">
@@ -53,7 +84,7 @@ const LoginForm: React.FC = () => {
             </Grid>
             <Grid item>
               <Link component={RouterLink} to="/sign-up" variant="body2">
-                {"Não tem uma conta? Cadastre-se"}
+                {"Cadastre-se"}
               </Link>
             </Grid>
           </Grid>
