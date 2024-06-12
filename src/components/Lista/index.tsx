@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-function Lista(){
+export default function Lista(){
+
+    
     return(
-        <div>
-
-        </div>
+        <>
+        
+        </>
     )
 }
-export  default Lista; 

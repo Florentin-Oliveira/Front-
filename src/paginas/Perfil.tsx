@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-export default function CardCliente(){
+export default function UserPerfil(){
 
     
     return(
