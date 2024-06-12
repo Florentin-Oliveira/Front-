@@ -7,10 +7,7 @@ import OS from "../components/OS/OrdenServico";
 function App() {
   return (
     <div>
-      <Home />
-      <Cliente />
-      <Botao />
-      <OS />
+      <h1>teste</h1>
     </div>
   );
 }

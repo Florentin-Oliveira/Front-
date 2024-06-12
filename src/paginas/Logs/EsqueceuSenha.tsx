@@ -47,4 +47,5 @@ const ForgotPasswordPage: React.FC = () => {
   );
 };
 
-export default ForgotPasswordPage;
+export default ForgotPasswordPage;/// deve ser mandando um email para user e ai podera redefinir a senha 
+
